@@ -4,16 +4,19 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { HttpClientModule }    from '@angular/common/http';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabsPageModule } from './tabs/tabs.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, TabsPageModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, TabsPageModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule, ],
   providers: [
     StatusBar,
     SplashScreen,

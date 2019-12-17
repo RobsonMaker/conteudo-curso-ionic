@@ -6,16 +6,16 @@
 
 <ion-content fullscreen>
 
-  <ion-card>
-    <h1 class="feedTitle">{{nomeUsuario}}</h1>
-    <img src="./assets/images/madison.jpg" />
+  <ion-card *ngFor="let filme of listaFilmes">
+    <h1 class="feedTitle">{{filme.original_title}}</h1>
+    <p class="feedDate">{{filme.release_date}}</p>
+    <img [src]="'https://image.tmdb.org/t/p/w300'+filme.backdrop_path" />
     <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
+      <ion-card-subtitle>Lingua Original</ion-card-subtitle>
+      <ion-card-title>{{filme.original_language}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin
-      Territory in 1836.
+      {{filme.overview}}
     </ion-card-content>
   </ion-card>
 </ion-content>
