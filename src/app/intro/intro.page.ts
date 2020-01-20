@@ -17,8 +17,7 @@ export class IntroPage implements OnInit {
   ngOnInit() {
   }
 goToTabsPage(){
-  
-  
+   
   this.router.navigate(['/tabs']);
 }
 }

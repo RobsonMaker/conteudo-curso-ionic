@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
+    
     path: '',
-    loadChildren: () => import('./intro/intro.module').then(m => m.IntroPageModule)
+    component: AppComponent
   }
 ];
 @NgModule({

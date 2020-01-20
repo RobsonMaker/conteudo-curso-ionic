@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoovieService } from '../moovie/moovie.service';
+import { MoovieService } from '../providers/moovie/moovie.service';
 
 @Component({
   selector: 'app-feed',
