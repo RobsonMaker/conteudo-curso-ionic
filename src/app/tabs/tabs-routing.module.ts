@@ -38,17 +38,21 @@ const routes: Routes = [
 
         ]
       },
+     
       {
-        path: 'intro',
+        path: 'config',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../intro/intro.module').then(m => m.IntroPageModule)
+              import('../cofiguracoes/cofiguracoes.module').then(m => m.CofiguracoesPageModule)
           },
 
         ]
       },
+
+      
+
       {
         path: '',
         redirectTo: '/tabs/tab1', 

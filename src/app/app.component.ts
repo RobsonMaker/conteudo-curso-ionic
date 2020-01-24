@@ -4,11 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ConfigService } from './providers/config/config.service';
-import { Routes, Router } from '@angular/router';
-import { IntroPage } from './intro/intro.page';
-import { IntroPageModule } from './intro/intro.module';
-import { IntroPageRoutingModule } from './intro/intro-routing.module';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -32,8 +28,9 @@ export class AppComponent {
     console.log(config)
 
     if(config == null){ 
-      ConfigService.setCongigDate(false) 
-      this.router.navigate(['/tabs/intro']);          
+     
+      this.router.navigate(['/intro']);  
+      ConfigService.setCongigDate(false)         
       
       
     }else{

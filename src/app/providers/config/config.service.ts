@@ -25,7 +25,7 @@ export class ConfigService {
   // Gravar dados do localstorage
   setCongigDate(showSlide?: boolean, name?: string, userName?: string){
     let config = {
-      showSlide: false,
+      showSlide: null,
       name: "",
       userName: ""
     };

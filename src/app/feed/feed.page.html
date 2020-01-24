@@ -4,8 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content padding>
 
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  
   <ion-card *ngFor="let filme of listaFilmes">
     <h1 class="feedTitle">{{filme.original_title}}</h1>
     <p class="feedDate">{{filme.release_date}}</p>
@@ -17,5 +22,16 @@
     <ion-card-content>
       {{filme.overview}}
     </ion-card-content>
+    <ion-button (click)="openDetalhes(filme)" expand="block" color="secondary">
+      Detalhes
+    </ion-button>
   </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

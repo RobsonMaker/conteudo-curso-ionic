@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do filme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+<ion-card *ngIf="filme">
+  <h1 class="feedTitle">{{filme.original_title}}</h1>
+  <p class="feedDate">{{filme.release_date}}</p>
+  <img [src]="'https://image.tmdb.org/t/p/w300'+filme.backdrop_path" />
+  <ion-card-header>
+    <ion-card-subtitle>Lingua Original</ion-card-subtitle>
+    <ion-card-title>{{filme.original_language}}</ion-card-title>
+  </ion-card-header>
+  
+  <ion-card-content>
+    {{filme.overview}}
+  </ion-card-content>
+
+  <ion-card-content>
+   <b>Quantidades de votos: </b> {{filme.vote_count}}
+  </ion-card-content>
+
+  <ion-card-content>
+    <b>Média: </b>{{filme.vote_average}}
+  </ion-card-content>
+  
+</ion-card>
+</ion-content>
