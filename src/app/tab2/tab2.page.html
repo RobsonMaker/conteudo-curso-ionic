@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Mapa
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-card *ngFor="let imovel of imoveis" >
+    <div class="mapa">
+      <img src="{{imovel.mapa}}">
+    </div>
+    <ion-item>
+      <h2 class="ion-text-wrap">{{imovel.nome}} &nbsp;</h2>
+      
+      <p>{{imovel.valor | currency: 'BRL' }}</p>
+    </ion-item>
+
+  </ion-card>
+</ion-content>
